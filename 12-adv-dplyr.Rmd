@@ -1,0 +1,51 @@
+# (PART) 编程技能 {-}
+
+# 高级数据处理 {#adv-dplyr}
+
+## 统计频次
+
+## 条件判断
+
+## 重编码
+
+## 数据规整	
+### 长表格变宽表格
+### 宽表格变长表格
+
+## 行方向与列方向
+### 多列执行相同操作
+### 数据标准化
+
+
+
+## 因子类型数据
+### 创建因子
+### 调整因子顺序
+### 在可视化中的应用
+
+
+## 函数式编程
+### 向量化操作
+### `purrr::map()`家族
+### 批量读取文件
+
+
+## 习题
+```{r}
+library(dplyr)
+
+
+df <- tibble(
+  item  = 1:10,
+  color = c(rep("red", 3), rep("green", 3), rep("blue", 4)),
+  type  = c(rep("big", 5), rep("small", 5)),
+  price = rnorm(10)
+)
+
+
+type_t <- c("big", "small")
+
+df %>% filter(type %in% type_t)
+df %>% filter(type == type_t)
+```
+

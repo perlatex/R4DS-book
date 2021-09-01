@@ -1,0 +1,84 @@
+# 可视化进阶 {#ggplot2-scale}
+
+```{r, message = FALSE, warning = FALSE}
+library(tidyverse)
+penguins <- read_csv(here::here("data", "penguins.csv")) 
+penguins %>%
+  select(species, sex, bill_length_mm, bill_depth_mm)
+```
+
+## 主题设置
+### 图表整体元素
+### 坐标轴元素
+### 面板元素
+### 图例元素
+### 分面元素 
+
+
+## 标度系统
+
+
+## 图例系统
+
+
+## 扩展内容
+### 组合图片 
+
+
+```{r}
+library(patchwork)
+p1 <- ggplot(penguins) +
+  geom_point(aes(x = bill_length_mm, y = bill_depth_mm, color = species))
+
+p2 <- ggplot(penguins) +
+  geom_point(aes(x = bill_length_mm, y = bill_depth_mm, color = species))
+
+combined <- p1 + p2 & theme(legend.position = "bottom")
+combined + plot_layout(guides = "collect")
+```
+
+### 可视化中的配色
+### 中文字体 
+
+```{r}
+library(systemfonts)
+library(ragg)
+```
+
+被systemfonts::system_fonts() 识别，就可以ragg直接使用
+```{r}
+systemfonts::system_fonts() %>% 
+  filter(family == "Adobe Heiti Std")
+```
+
+
+```{r}
+ggplot(NULL, aes(0, 0)) +
+  geom_text(aes(label = "Adobe 黑体"), size = 20, family = "Adobe Heiti Std") +
+  geom_text(aes(x = 0, y = 1,label = "Yahei Mono"), 
+            size = 20, family = "Yahei Mono") +
+  scale_y_continuous(expand = expansion(add = 0.5))
+```
+
+### 图中添加表格
+```{r}
+library(ggpp)
+library(ggrepel)
+library(dplyr)
+
+tb <- mtcars %>%
+  group_by(cyl) %>%
+  summarize(wt = mean(wt), mpg = mean(mpg)) %>%
+  ungroup() %>%
+  mutate(
+    wt = sprintf("%.2f", wt),
+    mpg = sprintf("%.1f", mpg)
+  )
+
+df <- tibble(x = 5.45, y = 34, tb = list(tb))
+
+ggplot(mtcars, aes(wt, mpg, colour = factor(cyl))) +
+  geom_point() +
+  geom_table(data = df, aes(x = x, y = y, label = tb))
+```
+

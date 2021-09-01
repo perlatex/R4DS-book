@@ -1,0 +1,7 @@
+# (PART) Stan建模 {-}
+
+# 贝叶斯统计与 Stan {#intro-stan}
+
+## 贝叶斯推断
+## Stan简介与安装
+## Stan基本语法

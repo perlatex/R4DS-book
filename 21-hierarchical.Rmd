@@ -1,0 +1,9 @@
+# 多层模型 {#hierarchical}
+
+
+## 明尼苏达州房屋中氡的存在
+## pooling model
+## no-pooling model
+## partially pooled model
+## 模型比较
+## 习题

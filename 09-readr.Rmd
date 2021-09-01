@@ -1,0 +1,119 @@
+# 数据读取 {#readr}
+
+在学习R语言过程中，除了使用内置的数据集外，我们更多的需要导入外部数据，
+比如实验观察数据、社会调研的数据等等。
+本章介绍如何读取数据。
+
+## 数据科学中的文件管理
+
+把项目所需的文件（代码、数据、图片等），放在一个文件夹里
+
+### 文件夹命名
+
+**推荐**我自己的文件夹命名习惯 (项目名+日期)，注意这里不要有**中文和空格**, 比如下面风格的就比较好 
+
+- `homework20201014`
+- `project20201014`
+- `Emotional_experiment20201014` 
+
+
+
+### 项目文件结构
+
+```{r readr-1, out.width='50%', fig.align='left', echo=FALSE}
+knitr::include_graphics("./images/Rproject.png")
+```
+
+## 读取文件
+
+事实上，R语言提供了很多读取数据的函数。下表列出了常见文件格式的读取方法
+
+
+文件格式                       |       **R** 函数 
+:---------------------------   |       :----------------------
+.txt                           |       `read.table()`
+.csv                           |       `read.csv()` and `readr::read_csv()`
+.xls and .xlsx                 |       `readxl::read_excel()` and `openxlsx::read.xlsx()`
+.sav(SPSS files)               |       `haven::read_sav()` and `foreign::read.spss()`
+.Rdata or rda                  |       `load()`
+.rds                           |       `readRDS()` and `readr::read_rds()` 
+.dta                           |       `haven::read_dta()` and `haven::read_stata()`
+.sas7bdat(SAS files)           |       `haven::read_sas()`
+Internet                       |       `download.file()`
+
+
+
+## 范例
+
+### 读取excel文件
+```{r readr-7, eval=FALSE, warning=FALSE}
+library(readxl)
+d <- read_excel("./data/vowel_data.xlsx")
+
+d <- read_excel(here::here("data", "vowel_data.xlsx"))
+```
+
+
+
+### 读取csv文件
+```{r readr-5, eval=FALSE, warning=FALSE}
+library(readr)
+d <- read_csv(file = "./data/csv_file.csv") 
+```
+
+
+
+
+### 读取txt文件
+```{r readr-2, eval=FALSE, warning=FALSE}
+d <- read.table(file= "./data/txt_file.txt", header = TRUE)
+```
+
+
+### 读取rda文件
+```{r readr-3, eval=FALSE, warning=FALSE}
+load(file = "./data/rda_file.rda")
+```
+
+### 读取rds文件
+```{r readr-4, eval=FALSE, warning=FALSE}
+d <- readRDS(file = "./data/rds_file.rds")
+```
+
+
+
+
+```{r readr-6, eval=FALSE, warning=FALSE}
+url <- "https://raw.githubusercontent.com/perlatex/R_for_Data_Science/master/demo_data/wages.csv"
+d <- read_csv(url)
+```
+
+
+
+
+### 读取dta格式文件
+```{r readr-8, eval=FALSE, warning=FALSE}
+library(haven)
+d <- read_dta("./data/cfps2010.dta")
+```
+
+
+## 习题
+
+读取data文件夹下kidiq.RDS文件
+
+```{r, include = FALSE, eval = FALSE}
+kidiq <- readr::read_rds("./data/kidiq.RDS") 
+kidiq
+```
+
+变量含义：
+
+| 变量       	| 含义             	|
+|------------	|------------------	|
+| kid_score  	| 小孩考试分数     	|
+| mom_hs     	| 母亲是否完成高中 	|
+| mom_iq     	| 母亲IQ值         	|
+| mom_age    	| 母亲年龄         	|
+
+请说出数据框中每一列的变量类型

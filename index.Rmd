@@ -1,0 +1,78 @@
+---
+title: "R语言统计编程"
+subtitle: "Tidyverse 和 Stan 实战"
+author: "王敏杰"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+knit: bookdown::render_book
+output: bookdown::bs4_book
+documentclass: book
+bibliography: [references.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: perlatex/R4DS-book
+url: "https://bookdown.org/wangminjie/R4DSBook/"
+#cover-image: images/cover.jpg
+description: "This book is an overview of how practitioners can acquire, wrangle, visualize, and model data with the R and Stan."
+---
+
+```{r setup-preface, include = FALSE}
+knitr::opts_chunk$set(
+        echo = TRUE, 
+        warning = FALSE, 
+        message = FALSE,
+        fig.showtext = TRUE
+       )
+
+#source("R/book-functions.R")
+```
+
+
+
+# 前言 {.unnumbered}
+
+这是在线版本 *R语言统计编程*，源文件存放在[GitHub](https://github.com/perlatex/R4DS-book). 欢迎提出建设性意见。
+
+
+
+## 关于本书
+
+R语言是统计编程的第一语言，近几年Tidyverse的推出大大降低了R语言的学习难度。Tidyverse是一系列R包的集合，包含了dplyr、ggplot2、tidyr、stringr等，从数据导入预处理，再到高级转化、可视化、建模和展示。因为其代码清晰可读的编程风格，得到越来越多人的喜爱。
+
+Stan是一种新型用于贝叶斯推断的统计编程语言，程序逻辑清晰，容易理解，并且提供了与（R，Python，shell，MATLAB，Julia，Stata）流行语言的接口，应用方便，功能强大。在实践操作中，Stan可以当作R语言的一种插件、一种扩展和增强。相比于传统的方法来说，Stan模型具有更好的可操作性、透明性和可解释性，因此对于统计方法的学习尤其是贝叶斯统计的学习尤为重要。
+
+本书在系统讲解Tidyverse的语法和技巧后，介绍了Stan建模的应用案例。Tidyverse简洁高效与Stan清晰强大的完美结合，在R语言统计编程中得到了集中体现。书中案例丰富，具有很强的实用性、典型性和价值性，相信能为国内社会科学的工作者革新统计方法、拓展研究视角。
+
+
+
+本书内容以课程的方式展现。目的是让你有一个顺畅、紧凑的学习体验。作者使理论讲述部分的内容尽量少，多讲实际应用方面。并对本书内容进行了精心组织以便你能快速入门，然后通过一节节的课程逐步学习高级主题。本书整体框架：
+
+
+- 第一部分：**基础篇**。
+第一部分讲解R语言基础知识。它以第 \@ref(intro)章讨论我们为什么要学习R语言作为开始。如果你想加快开始，你可以跳过它，但是你会发现它很有趣。随后，我们会讲如何安装和配置运行环境。在第 \@ref(objects)章中，你将学习R语言的基础概念，包括数据类型和数据结构，以及R语言函数向量化操作的思想，这些内容为后面知识的学习打好基础。
+
+- 第二部分：*Tidyverse编程技能*。
+第二部分是关于Tidyverse编程技能。在第 \@ref(readr)章中，你将学习如何从外部文件中读取数据。第 \@ref(dplyr)章介绍强大的dplyr数据处理，它几乎包含了我们整理数据的所有功能，堪称数据处理的瑞士军刀。随后，你将学习如何把你的分析结果生成文档报告，并与他人分享，因为可重复性是数据分析工作的必然要求。在第 \@ref(ggplot2-aes)章中，你将学习数据可视化的各种技能，我相信你会被ggplot2呈现的各种图形所着迷。第7章介绍高级数据处理的各种技术，比如循环迭代，提高代码可读性和工作效率。第8章通过一个探索性分析案例，帮助你回望本章的各种技能，夯实数据分析的工作流程。
+
+- 第三部分：*Stan统计建模*。
+第三部分是关于统计建模的高级主题。在第 \@ref(intro-stan)章中，你将重点学习贝叶斯推断的基本理论，并引入Stan编程语言，之所以学习它，是因为从数学公式到代码实现，Stan建模更符合人的直觉，并且具有很强的灵活性，修改几行代码，就转化成一个新的模型，更重要的是，相比传统的方法，Stan统计建模具有更好的参数透明性和结果可解释性。因此，从第 \@ref(lm)章开始，我们将通过案例介绍各种贝叶斯统计模型，并提供了统计理论的Stan代码实现与模型解释，你可以简单修改模型参数，然后运用到你的实际研究工作中。
+
+
+
+## 读者对象
+
+统计编程是社会科学研究的一项必要技能，我相信本书的内容对从事社会科学研究的科学家和研究生
+或者数据科学工作者会有帮助。
+
+
+## 关于作者
+
+王敏杰，爱好数据科学，喜欢用R, Tidyverse, Tidymodels 和 Stan 统计编程，联系方式 38552109@qq.com
+
+
+## 本书技术
+
+This book was written using RStudio's [Visual Editor for R Markdown](https://rstudio.github.io/visual-markdown-editing/), and published with the **bookdown** R package [@xie2016].
+
+
+

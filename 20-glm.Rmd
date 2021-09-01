@@ -1,0 +1,8 @@
+# 广义线性模型 {#glm}
+
+## 气温与冰淇淋销量
+## normal models
+## log normal models
+## 泊松回归模型
+## 二项式回归模型
+## 模型比较

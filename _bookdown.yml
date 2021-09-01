@@ -1,0 +1,48 @@
+book_filename: bookdown
+clean: [packages.bib, bookdown.bbl]
+delete_merged_file: true
+language:
+  label:
+    fig: "FIGURE "
+    tab: "TABLE "
+  ui:
+    edit: "Edit"
+    chapter_name: "Chapter "
+
+
+rmd_files:
+  - "index.Rmd"
+
+  # 基础篇
+  - "01-introduction.Rmd"
+  - "02-objects.Rmd"
+
+  - "04-vector.Rmd"
+  - "05-data-structure.Rmd"
+  - "06-operators.Rmd"
+
+  - "07-functions.Rmd"
+  - "08-subsetting.Rmd"
+
+  - "09-readr.Rmd"
+  - "10-dplyr.Rmd"
+
+  #- "Rmarkdown.Rmd"
+  - "11-ggplot2.Rmd"
+
+  ## 编程篇
+  #- "12-adv-dplyr.Rmd"
+  #- "13-tidyr.Rmd"
+  #- "14-adv-ggplot2.Rmd"
+  #- "15-beauty_of_across.Rmd"
+  #- "16-beauty_of_layer.Rmd"
+  #- "17-eda.Rmd"
+
+  ## 建模篇
+  #- "18-stan.Rmd"
+  #- "19-lm.Rmd"
+  #- "20-glm.Rmd"
+  #- "21-hierarchical.Rmd"
+  #- "22-Mixtures.Rmd"
+  #- "23-more.Rmd"
+  #- "25-references.Rmd"
