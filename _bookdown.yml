@@ -1,4 +1,4 @@
-book_filename: bookdown
+book_filename: R4DSBook
 clean: [packages.bib, bookdown.bbl]
 delete_merged_file: true
 language:
